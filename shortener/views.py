@@ -21,13 +21,15 @@ class MainView(FormView):
         if not url_count:
             history_count = History.objects.count()
             if not history_count:
-                history = History.objects.create(recent_url = 'ffffffff')
+                history = History.objects.create(recent_url = 'zzzzzzzz')
             else:
                 history = History.objects.all()[0]
 
             recent = history.recent_url
             shorten = get_next_alphanum(str(recent))
-            print(shorten)
+            
+            delete_duplicated_data(shorten)
+
             history.recent_url = shorten
             URL = Url.objects.create(original = search_url, shorten = shorten)
             URL.save()
@@ -38,6 +40,11 @@ class MainView(FormView):
  
         return redirect('/result/'+shorten)
 
+
+def delete_duplicated_data(shorten):
+    url_count = Url.objects.filter(shorten = shorten).count()
+    if not url_count:
+        Url.objects.filter(shorten = shorten).delete()
 
 def result_view(request, shorten):
     context = {

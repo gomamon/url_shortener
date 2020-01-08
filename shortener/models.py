@@ -6,5 +6,5 @@ class Url(models.Model):
     shorten = models.CharField(max_length=8, blank=True, null=False, unique=True)
     
 class History(models.Model):
-    recent_url = models.CharField(max_length=8, default = 'ffffffff')
+    recent_url = models.CharField(max_length=8, default = 'zzzzzzzz')
 
