@@ -9,16 +9,27 @@
 
 
 {% block body %}
-	<h1>URL SHORTENER</h1>
+<div class="container">
 
-	<form method="post">
-		{% csrf_token %}
-		{% bootstrap_form form %}
-		<button type="submit" class="btn btn-success">Send</button>
-	</form>
+	<div class="mt-5 row justify-content-md-center">
 
-		{{ shorten }}
-{% endblock body %}
+		<div class="col-12"align="center" >
+			<h1>무료로 URL을 줄여주는 가오리</h1>
+		</div>
+		<div class="col-12"align="center">
+			<img class="gaori" src = {% static 'shortener/img/gaori1.svg' %}>
+		</div>
 
-{% block bodyscript %}
-{% endblock bodyscript %}
+		<div class="col-12"align="center" >
+			<form method="post">
+				{% csrf_token %}
+				{% bootstrap_form form show_label=False %}
+				<button type="submit" class="btn btn-lg btn-success">일해라 가오리!</button>
+			</form>
+		</div>
+	</div>
+	{% endblock body %}
+
+	<script type="module" src="{% static 'shortener/js/text_effect.js' %}"></script>
+	{% block bodyscript %}
+	{% endblock bodyscript %}

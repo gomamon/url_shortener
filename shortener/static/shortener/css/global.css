@@ -1,0 +1,37 @@
+@font-face { font-family: 'DungGeunMo'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'silgothic'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/silgothic.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+/***** basic style *******/
+
+body{
+	background : #0072df;
+	color : #ffff;
+	font-family : 'DungGeunMo';
+	text-decoration : none;
+	color : #7beaa8;
+}
+a:hover, a:active {
+	  color: #4CAF50;
+  }
+
+/****** spection text style  ********/
+
+
+/****** animation *****/
+@keyframes spin {
+	0% {
+		transform: rotateZ(0);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+.gaori{
+	width : 300px
+}
+
+.gaori{
+	animation:spin 3s linear infinite;
+}
+
+

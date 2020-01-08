@@ -9,10 +9,31 @@
 
 
 {% block body %}
-	<p>result</p>	
 
-	<p>{{ original }}</p>
-	<p>{{ shorten }} <p>
+	<div class="mt-5 row justify-content-md-center">
+
+		<div class="col-12"align="center" >
+			<h1>줄이기완료! 이제 자러간다Zzz</h1>
+		</div>
+
+		<div class="col-12 mt-4" align="center">
+			<h1 class="imoticon">๑◕‿‿◕๑</h1>
+		</div>
+		<div class="col-12 mt-4"align="center" >
+
+			<h4><a href="{{ original }}"> {{ original }} </a> <h4>
+			<h4>를 열심히 줄였다요.</h4> <br>
+			<h4><a href="http://localhost:8000/{{ shorten }}">http://localhost:8000/{{ shorten }}</a>
+				로 간편히 쓰도록 해!
+			</h4>
+			
+		</div>
+
+		<div class="col-12 mt-5"align="center" >
+			<a class="btn btn-lg btn-success" type="submit" href="http://localhost:8000">"안돼, 가오리야 더 일해"</a>
+		</div>
+	</div>
+
 
 {% endblock body %}
 

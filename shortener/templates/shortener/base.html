@@ -9,17 +9,20 @@
 	<head>
 		<meta charset="utf-8">
 		{% bootstrap_css %}
-		<link rel="stylesheet" href="{% static '/reset.css' %}">
-		<link rel="stylesheet" href="{% static '/global.css' %}">
+		<link rel="stylesheet" href="{% static 'shortener/css/reset.css' %}">
+		<link rel="stylesheet" href="{% static 'shortener/css/global.css' %}">
+		<link rel="stylesheet" href="{% static 'shortener/css/animation.css' %}">
+		
 		{% block head %}
 		{% endblock head %}
 	</head>
+
+
 
 	<body>
 		{% block body %}
 		{% endblock body %}
 
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		{% block body_script %}
 		{% endblock body_script %}
 	</body>
