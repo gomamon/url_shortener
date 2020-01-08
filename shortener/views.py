@@ -16,14 +16,22 @@ class MainView(FormView):
     def form_valid(self, form):
         shorten = ''
         search_url = '%s' %self.request.POST['search_url']
-        q_url = Url.objects.filter(original = search_url).count()
-        
-        print(q_url)
-        if not q_url:
-            URL = Url.objects.create(original = search_url)
-            URL.shorten = shortener(str(URL.original))
-            shorten = URL.shorten
+        url_count = Url.objects.filter(original = search_url).count()
+
+        if not url_count:
+            history_count = History.objects.count()
+            if not history_count:
+                history = History.objects.create(recent_url = 'ffffffff')
+            else:
+                history = History.objects.all()[0]
+
+            recent = history.recent_url
+            shorten = get_next_alphanum(str(recent))
+            print(shorten)
+            history.recent_url = shorten
+            URL = Url.objects.create(original = search_url, shorten = shorten)
             URL.save()
+            history.save()
         else:
             URL = get_object_or_404(Url, original = search_url)
             shorten = URL.shorten
