@@ -11,16 +11,16 @@
 {% block body %}
 <div class="container">
 
-	<div class="mt-5 row justify-content-md-center">
+	<div class="pt-5 mt-3 row justify-content-md-center">
 
-		<div class="col-12"align="center" >
+		<div class="col-12 pt-3"align="center" >
 			<h1>무료로 URL을 줄여주는 가오리</h1>
 		</div>
-		<div class="col-12"align="center">
+		<div class="col-12 pt-3"align="center">
 			<img class="gaori" src = {% static 'shortener/img/gaori1.svg' %}>
 		</div>
 
-		<div class="col-12"align="center" >
+		<div class="col-md-12 col-lg-6 pb-5"align="center" >
 			<form method="post">
 				{% csrf_token %}
 				{% bootstrap_form form show_label=False %}
@@ -30,6 +30,5 @@
 	</div>
 	{% endblock body %}
 
-	<script type="module" src="{% static 'shortener/js/text_effect.js' %}"></script>
 	{% block bodyscript %}
 	{% endblock bodyscript %}

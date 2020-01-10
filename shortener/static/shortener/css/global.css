@@ -8,14 +8,24 @@ body{
 	color : #ffff;
 	font-family : 'DungGeunMo';
 	text-decoration : none;
-	color : #7beaa8;
+}
+
+a{
+	text-decoration : none;
+	color: #74e877
 }
 a:hover, a:active {
 	  color: #4CAF50;
   }
 
 /****** spection text style  ********/
+.imoticon{
+	
+}
 
+.text-pink{
+	color: #f78a80
+}
 
 /****** animation *****/
 @keyframes spin {
